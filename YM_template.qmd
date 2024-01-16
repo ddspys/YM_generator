@@ -1,0 +1,26 @@
+---
+title: "한국어"
+format:
+  pdf:
+    pdf-engine: 
+
+    
+  
+
+
+---
+
+```{r}
+#| echo: false
+#| output: asis
+
+
+source("YM_generator.R" )
+URL <- "https://docs.google.com/spreadsheets/d/1dWtltgoBX1x4aF06_CRKqBwAukjw0zSY49-dkAobVdo/edit#gid=2057754976"
+
+sel <- c("머리목해부학", "주간평가", "1회차" )
+generateYM(URL, sel)
+
+```
+
+# 이거 왜이래
