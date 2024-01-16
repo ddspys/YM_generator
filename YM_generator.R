@@ -9,17 +9,21 @@ generateYM <- function(gsURL,op){
   selYM <- totalYM[과목명 == sel[1] & `시험 유형` == sel[2] & `차수` == sel[3] & !is.na(suppressWarnings(as.numeric(`문제 번호`))),]
   selYM$`문제 번호` <- as.numeric(selYM$`문제 번호`)
   setorder(selYM, `문제 번호`)
-  cat(paste0("# ",paste(op, collapse = " "), "\n"))
+  
   
   for(i in 1:nrow(selYM)){
-    cat(paste0("## ",selYM[i,`문제 번호`], "\n"))
-    cat(paste0(selYM[i,`문제 내용`], "\n"))
-    cat(paste0("답: ",selYM[i,`문제 정답`], "\n"))
-    cat("\n\n")
+    
+
+    cat(paste0("## ",selYM[i,`문제 번호`]))
+    cat("  \n  \n"," \n")
+    cat(strsplit(selYM[i,`문제 내용`],split = "\n")[[1]], sep = "  \n  \n")
+    cat("  \n  \n")
+    cat(paste0("답: ",selYM[i,`문제 정답`]))
+    cat("  \n  \n  \n")
     
   }
   
-  
+  return(paste0(paste(op, collapse = " ")))
 }
 
 #URL <- "https://docs.google.com/spreadsheets/d/1dWtltgoBX1x4aF06_CRKqBwAukjw0zSY49-dkAobVdo/edit#gid=2057754976"
@@ -33,6 +37,6 @@ generateYM <- function(gsURL,op){
 #  cat(paste0("## ",selYM[i,`문제 번호`], "\n"))
 #  cat(paste0(selYM[i,`문제 내용`], "\n"))
 #  cat(paste0("답: ",selYM[i,`문제 정답`], "\n"))
-  
+#  
 #}
 

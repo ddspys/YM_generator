@@ -2,7 +2,10 @@
 title: "한국어"
 format:
   pdf:
-    pdf-engine: 
+    pdf-engine: xelatex
+    include-in-header:
+      text: |
+        \usepackage{kotex}
 
     
   

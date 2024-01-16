@@ -1,0 +1,28 @@
+---
+output:
+  pdf_document:
+    latex_engine: xelatex
+
+mainfont: NanumMyeongjo
+monofont: NanumMyeongjo
+
+---
+**작성자: 익명**
+
+**작성일시: `r Sys.time()`**
+
+```{r, echo=FALSE, results='asis'}
+
+
+source("YM_generator.R" )
+URL <- "https://docs.google.com/spreadsheets/d/1dWtltgoBX1x4aF06_CRKqBwAukjw0zSY49-dkAobVdo/edit#gid=2057754976"
+
+sel <- c("머리목해부학", "주간평가", "1회차" )
+title <- generateYM(URL, sel)
+
+```
+
+---
+title: `r title`
+---
+
